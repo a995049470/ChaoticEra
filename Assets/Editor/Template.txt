@@ -15,6 +15,10 @@ public class {class_name}
         {
             value = m_Dic[id];
         }
+		else
+		{
+			Debug.LogError(id + "   不存在");
+		}	
 		return value;
 	}
 	

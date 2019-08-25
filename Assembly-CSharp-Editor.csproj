@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Editor\ExcelReader.cs" />
+    <Compile Include="Assets\Editor\TextExEditor.cs" />
     <Compile Include="Assets\XLua\Editor\ExampleConfig.cs" />
     <Compile Include="Assets\XLua\Examples\13_BuildFromCLI\Editor\BuildFromCLI.cs" />
     <Compile Include="Assets\XLua\Src\Editor\Generator.cs" />
@@ -359,7 +360,7 @@
       <HintPath>C:/Users/Administrator/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
-      <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/2015/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+      <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>E:/Tools/Unity2018/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/mscorlib.dll</HintPath>

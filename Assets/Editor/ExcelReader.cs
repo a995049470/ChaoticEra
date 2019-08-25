@@ -112,8 +112,7 @@ public class ExcelReader
                 Content.Append('\n');
             }
             package.Dispose();
-            //string txtpath = m_TextSavePath + "\\" + file.Name.Split('.')[0] +  ".txt";
-            string txtpath = m_TextSavePath + "\\" + "test" + i + ".txt";
+            string txtpath = m_TextSavePath + "\\" + file.Name.Split('.')[0] +  ".txt";       
             File.WriteAllText(txtpath, Content.ToString());
             
         }

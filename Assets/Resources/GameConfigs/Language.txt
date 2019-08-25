@@ -1,0 +1,13 @@
+string	string	
+id	value	
+CreateWin_1	力量	
+CreateWin_2	敏捷	
+CreateWin_3	速度	
+CreateWin_4	根骨	
+CreateWin_5	悟性	
+CreateWin_6	福源	
+CreateWin_7	魅力	
+CreateWin_8	理性	
+CreateWin_9	感性	
+CreateWin_10	胆识	
+CreateWin_11	不可见	
