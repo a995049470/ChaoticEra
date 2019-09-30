@@ -15,6 +15,51 @@ public class ExcelReader
     private static string m_VarTemplate = @"public {var_type} {var_name} { get; private set; }";
     private static string m_DataToVarTemplate = @"config.{var_name} = ({var_type})Helper.ParseString(data[{id}], ""{var_type}"");";
 
+    
+    [MenuItem("MyTool/ExcelToTxt")]
+    public static void ExcelToTxt()
+    {
+        DirectoryInfo fdir = new DirectoryInfo(m_ExcelLoadPath);
+        FileInfo[] files = fdir.GetFiles();
+        if (files.Length == 0)
+        {
+            return;
+        }
+        for (int i = 0; i < files.Length; i++)
+        {
+            FileInfo file = files[i];
+            string suf = file.Name.Split('.')[1];
+            if (suf != "xlsx")
+            {
+                continue;
+            }
+            string path = m_ExcelLoadPath + "\\" + file.Name;
+            ExcelPackage package = new ExcelPackage(new FileStream(path, FileMode.Open));            
+            ExcelWorksheet sheet = package.Workbook.Worksheets[1];
+            StringBuilder Content = new StringBuilder();
+            for (int j = sheet.Dimension.Start.Row, k = sheet.Dimension.End.Row; j <= k; j++)
+            {
+                for (int m = sheet.Dimension.Start.Column, n = sheet.Dimension.End.Column; m <= n; m++)
+                {
+                    string str = sheet.GetValue(j, m).ToString();
+                    if(str == null)
+                    {
+                        continue;
+                    }
+                    Content.Append(str);
+                    Content.Append('\t');
+                }
+                Content.Append('\n');
+            }
+            package.Dispose();
+            string txtpath = m_TextSavePath + "\\" + file.Name.Split('.')[0] +  ".txt";       
+            File.WriteAllText(txtpath, Content.ToString());
+            
+        }
+        AssetDatabase.Refresh();
+        Debug.Log("转换完成");
+    }
+
     [MenuItem("MyTool/TxtToScript")]
     public static void TxtToScript()
     {
@@ -29,7 +74,7 @@ public class ExcelReader
             FileInfo file = files[i];
             var res = file.Name.Split('.');
             string suf = res[res.Length - 1];
-            if(suf != "txt")
+            if (suf != "txt")
             {
                 continue;
             }
@@ -76,50 +121,5 @@ public class ExcelReader
         Debug.Log("转换完成");
     }
 
-    [MenuItem("MyTool/ExcelToTxt")]
-    public static void ExcelToTxt()
-    {
-        DirectoryInfo fdir = new DirectoryInfo(m_ExcelLoadPath);
-        FileInfo[] files = fdir.GetFiles();
-        if (files.Length == 0)
-        {
-            return;
-        }
-        for (int i = 0; i < files.Length; i++)
-        {
-            FileInfo file = files[i];
-            string suf = file.Name.Split('.')[1];
-            if (suf != "xlsx")
-            {
-                continue;
-            }
-            string path = m_ExcelLoadPath + "\\" + file.Name;
-            ExcelPackage package = new ExcelPackage(new FileStream(path, FileMode.Open));            
-            ExcelWorksheet sheet = package.Workbook.Worksheets[1];
-            StringBuilder Content = new StringBuilder();
-            for (int j = sheet.Dimension.Start.Row, k = sheet.Dimension.End.Row; j <= k; j++)
-            {
-                for (int m = sheet.Dimension.Start.Column, n = sheet.Dimension.End.Column; m <= n; m++)
-                {
-                    string str = sheet.GetValue(j, m).ToString();
-                    if(str == null)
-                    {
-                        continue;
-                    }
-                    Content.Append(str);
-                    Content.Append('\t');
-                }
-                Content.Append('\n');
-            }
-            package.Dispose();
-            string txtpath = m_TextSavePath + "\\" + file.Name.Split('.')[0] +  ".txt";       
-            File.WriteAllText(txtpath, Content.ToString());
-            
-        }
-        AssetDatabase.Refresh();
-        Debug.Log("转换完成");
-    }
-
-    
 
 }

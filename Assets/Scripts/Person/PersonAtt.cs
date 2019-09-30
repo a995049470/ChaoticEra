@@ -1,4 +1,6 @@
 ﻿
+using UnityEngine;
+
 public enum AttType
 {
     Pow,//力量
@@ -14,11 +16,12 @@ public enum AttType
     Lore,//知识
 }
 
-public class PersonAtt 
+public class PersonData : ClassPool<PersonData>
 {
-    private int[] m_Atts;//属性 
-    public int GetAtt(AttType type)
-    {
-        return m_Atts[(int)type];        
-    }
+    public string fullname;
+    public int[] atts;
+    public int id;
+    public int sex;
+    public Vector3Int pos;//z 表示地图ID
+    public const int AttTypeCount = 11;
 }

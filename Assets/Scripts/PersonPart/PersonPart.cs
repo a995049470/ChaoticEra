@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public abstract class PersonPart 
+
+public abstract class PersonPart : Object 
 {
     private Person m_Person;
     public abstract void Init(Person person);

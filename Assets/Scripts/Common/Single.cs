@@ -1,5 +1,5 @@
-﻿
-public class Single<T> where T : new()
+﻿using UnityEngine;
+public class Single<T> : Object where T : new()
 {
     private static T m_Instance;
     public static T Instance
@@ -12,6 +12,7 @@ public class Single<T> where T : new()
             }
             return m_Instance;
         }
+        
     }
 	
 }

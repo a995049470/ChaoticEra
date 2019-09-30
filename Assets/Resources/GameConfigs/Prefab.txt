@@ -1,0 +1,4 @@
+int	string	
+id	path	
+1	GamePrefab/Person/man_1	
+2	GamePrefab/Person/woman_1	

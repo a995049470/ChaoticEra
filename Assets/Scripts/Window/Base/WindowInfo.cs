@@ -40,7 +40,7 @@ public class WindowInfo : MonoBehaviour
         RectTransform parent = m_Root.transform.Find("UIWindows").GetChild(m_Type.GetHashCode()) as RectTransform;
         if(parent != null)
         {
-            this.transform.parent = parent;
+            this.transform.SetParent(parent);
             m_Rect.sizeDelta = parent.sizeDelta;
             m_Rect.anchoredPosition3D = Vector3.zero;
             m_Rect.anchorMin = parent.anchorMin;

@@ -13,6 +13,7 @@ public class TextEx : Text
     {
         base.Awake();
         ChangetText();
+
     }
 
 
@@ -26,7 +27,7 @@ public class TextEx : Text
         {
             return;
         }
-        m_Key = this.text;
+        m_Key = this.text.TrimEnd();
         string str = LanguageConfig.Get(m_Key).value;
         this.text = str;
     

@@ -17,7 +17,6 @@ public class SingleMonoBehaviour<T> : MonoBehaviour where T : MonoBehaviour
                 {
                     m_Instance = m_Root.AddComponent<T>();
                 }
-                
             }
             return m_Instance;
         }
