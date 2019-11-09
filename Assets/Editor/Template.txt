@@ -22,6 +22,14 @@ public class {class_name}
 		return value;
 	}
 	
+	public static {key_type}[] GetKeys()
+	{
+		Init();
+		{key_type}[] keys = new {key_type}[m_Dic.Keys.Count];
+        m_Dic.Keys.CopyTo(keys, 0);
+        return keys;
+	}
+
 	public static void Init()
 	{
 		if(m_Init)

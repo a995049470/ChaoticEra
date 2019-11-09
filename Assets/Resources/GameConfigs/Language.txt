@@ -1,5 +1,5 @@
 string	string	
-id	value	
+id	value	备注	
 CreateWin_1	力量：	
 CreateWin_2	敏捷：	
 CreateWin_3	速度：	

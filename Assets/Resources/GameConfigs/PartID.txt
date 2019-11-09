@@ -1,0 +1,7 @@
+string	int	
+part	value	
+Person	1	
+PersonData	2	
+Tiled	3	
+TiledData	4	
+MovePart	1001	

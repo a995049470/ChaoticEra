@@ -1,0 +1,10 @@
+{
+    "name": "Tool",
+    "references": [
+        "Game"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}

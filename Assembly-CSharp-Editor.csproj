@@ -54,28 +54,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Editor\EditorHelp.cs" />
-     <Compile Include="Assets\Editor\ExcelReader.cs" />
+     <Compile Include="Assets\Editor\MyTool.cs" />
      <Compile Include="Assets\Editor\TextExEditor.cs" />
-     <Compile Include="Assets\XLua\Editor\ExampleConfig.cs" />
-     <Compile Include="Assets\XLua\Examples\13_BuildFromCLI\Editor\BuildFromCLI.cs" />
-     <Compile Include="Assets\XLua\Src\Editor\Generator.cs" />
-     <Compile Include="Assets\XLua\Src\Editor\Hotfix.cs" />
-     <Compile Include="Assets\XLua\Src\Editor\LinkXmlGen\LinkXmlGen.cs" />
-     <Compile Include="Assets\XLua\Src\Editor\TemplateRef.cs" />
-     <None Include="Assets\XLua\Src\Editor\LinkXmlGen\LinkXmlGen.tpl.txt" />
-     <None Include="Assets\XLua\Src\Editor\Template\LuaClassWrapGCM.tpl.txt" />
-     <None Include="Assets\XLua\Src\Editor\Template\LuaWrapPusher.tpl.txt" />
-     <None Include="Assets\XLua\Src\Editor\Template\LuaDelegateBridge.tpl.txt" />
-     <None Include="Assets\XLua\Src\Editor\Template\TemplateCommon.lua.txt" />
-     <None Include="Assets\XLua\Src\Editor\Template\LuaEnumWrap.tpl.txt" />
      <None Include="Assets\Editor\Template.txt" />
-     <None Include="Assets\XLua\Src\Editor\Template\LuaDelegateWrap.tpl.txt" />
-     <None Include="Assets\XLua\Src\Editor\Template\LuaRegisterGCM.tpl.txt" />
-     <None Include="Assets\XLua\Src\Editor\Template\LuaRegister.tpl.txt" />
-     <None Include="Assets\XLua\Src\Editor\Template\LuaInterfaceBridge.tpl.txt" />
-     <None Include="Assets\XLua\Src\Editor\Template\LuaClassWrap.tpl.txt" />
-     <None Include="Assets\XLua\Src\Editor\Template\LuaEnumWrapGCM.tpl.txt" />
-     <None Include="Assets\XLua\Src\Editor\Template\PackUnpack.tpl.txt" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>E:/Projects/UnityProjects/ChaoticEra/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
@@ -701,6 +682,10 @@
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{C3A379CF-A41F-254B-F8B1-8107B40C2F13}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+    <ProjectReference Include="Game.csproj">
+      <Project>{CFDAC4F1-2362-F64C-C22D-C2C6070C7922}</Project>      <Name>Game</Name>    </ProjectReference>
+    <ProjectReference Include="Tool.csproj">
+      <Project>{8CCDF701-BAFB-0A17-5114-B357CF63F89D}</Project>      <Name>Tool</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
